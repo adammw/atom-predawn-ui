@@ -34,9 +34,22 @@
   }
 
   li.list-nested-item {
-    &.status-modified .list-item,
-    .status-ignored.list-item {
+    .list-item {
       color: rgb(140, 140, 140);
+
+      &.selected {
+        font-weight: bold;
+
+        &.status-added { color: @text-color-added !important; }
+        &.status-modified { color: @text-color-modified !important; }
+        &.status-removed { color: @text-color-removed !important; }
+        &.status-renamed { color: @text-color-renamed !important; }
+      }
+
+      &.status-added { color: fadeout(@text-color-added, 20%) !important; }
+      &.status-modified { color: fadeout(@text-color-modified, 20%) !important; }
+      &.status-removed { color: fadeout(@text-color-removed, 20%) !important; }
+      &.status-renamed { color: fadeout(@text-color-renamed, 20%) !important; }
     }
 
     &.directory .list-item:not(.file),
